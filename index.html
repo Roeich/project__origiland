@@ -13,28 +13,6 @@
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
 <body>
-    <style>
-        body::-webkit-scrollbar {
-            display: none;
-        }
-
-        body {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .temp_img{
-            position: absolute;
-            z-index: 2000;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            pointer-events: none;
-            user-select: none;
-            opacity: 0.5;
-            display: none;
-        }
-    </style>
-    <img class="temp_img" src="tempalate.jpg" alt="" >
 
     <!-- __________________ start header area  __________________ -->
     <header class="header sticky-top">
@@ -61,8 +39,7 @@
                     </ul>
                 </div>
                 <button class="navbar-toggler menu_toggleBtn" type="button">
-                    <span></span>
-                    <span></span>
+                    <i class="fa-solid fa-bars"></i>
                 </button>
             </nav>
         </div>
@@ -98,7 +75,7 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="stat_cardsRow">
-                            <div class="row position-relative">
+                            <div class="row gy-3 position-relative">
                                 <div class="circle_bg"></div>
                                 <div class="col-sm-6">
                                     <div class="stat_card">
@@ -153,7 +130,7 @@
             <div class="container">
                 <div class="circle_bg"></div>
                 <h2 class="sec_title line_top">El 97% de las personas que venden un terreno, <span class="c_primary">no conocen su verdadero valor</span>.</h2>
-                <div class="row g-4">
+                <div class="row g-3 g-xl-4">
                     <div class="col-6 col-sm-4 col-lg-3">
                         <div class="info_card">
                             <img class="info_icon" src="assets/img/home/icon-1.svg" alt="icon">
@@ -178,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-sm-4 col-lg-3">
+                    <div class="col-6 col-sm-4 col-lg-3 d-none d-lg-block">
                         
                     </div>
                     <div class="col-6 col-sm-4 col-lg-3">
@@ -274,7 +251,7 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 footer_col_1">
+                <div class="col-md-5 footer_col_1">
                     <div class="footer_colContent text-center">
                         <div class="fs_26">Dirección</div>
                         <p class="fs_18">Si dispone de oficinas, este sería el espacio para colocar esa dirección.</p>
@@ -282,7 +259,7 @@
                         <p class="fs_18">+11 11111-11111</p>
                     </div>
                 </div>
-                <div class="col-lg-2 footer_col_2">
+                <div class="col-6 col-md-3 col-lg-2 footer_col_2">
                     <div class="footer_colContent">
                         <h2 class="footer_colTitle">Sitemap</h2>
                         <ul class="footer_nav">
@@ -298,7 +275,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 footer_col_3">
+                <div class="col-6 col-md-3 col-lg-2 footer_col_3">
                     <div class="footer_colContent">
                         <h2 class="footer_colTitle">Soporte</h2>
                         <ul class="footer_nav">
