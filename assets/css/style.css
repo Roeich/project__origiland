@@ -140,7 +140,10 @@ p{
 }
 @media(min-width:1200px){
   .container{
-    max-width: 1264px; /* 1240px */
+    max-width: 79rem; /* 1240px */
+  }
+  .container_sm{
+    max-width: 68.375rem;
   }
 }
 /* _______________________ start home page _______________________ */
@@ -496,6 +499,39 @@ p{
   font-family: var(--ff_Roboto);
 }
 /* ... end info section ... */
+
+/* ... start reason section ... */
+.reason_section{
+  padding: 5.5rem 0rem;
+  background-image: url("../img/home/reason_bg.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 14.375rem;
+}
+.reason_list{
+  padding-top: 3rem;
+  list-style: none;
+  max-width: 60rem;
+  margin: auto;
+  padding-left: 3.75rem;
+}
+.reason_list li{
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+.reason_num{
+  color: var(--c_white);
+  background-color: var(--bg_primary);
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 0px;
+  left: -3.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+/* ... end reason section ... */
 
 
 
