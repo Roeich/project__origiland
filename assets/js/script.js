@@ -18,5 +18,25 @@ $(document).ready(function() {
         checkScroll();
     });
     
+
+    // ... otp form control 
+    $("#otp").pincodeInput({
+        hidedigits: false, 
+        inputs: 6,
+        keydown: function(){
+
+            // disable submit button
+            $("#otpModal .submit_btn").addClass("disabled");
+        },
+        complete: function (value, e, errorElement) {
+            if(value==="123456"){
+                $("#otpModal").removeClass("invalidOTP");
+                $("#otpModal .submit_btn").removeClass("disabled");
+            }else{
+                $("#otpModal").addClass("invalidOTP");
+                $("#otpModal .submit_btn").addClass("disabled");
+            }
+        }
+    });
     /* ___________________ end home page ___________________ */
 });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +60,7 @@
                         <div class="hero_content">
                             <h1 class="hero_title">Te ayudamos a identificar el potencial de desarrollo de tu propiedad en CDMX</h1>
                             <p class="hero_desc">Simula todos los cálculos que realizan los desarrolladores inmobiliarios y elabora un proyecto atractivo para conectar con ellos y tener una propuesta rentable, atractiva y justa.</p>
-                            <div><a class="btn btn_lg btn_primary" href="#">Registrar un terreno</a></div>
+                            <div><button class="btn btn_lg btn_primary" data-bs-toggle="modal" data-bs-target="#registerModal">Registrar un terreno</button></div>
                         </div>
                     </div>
                 </div>
@@ -249,20 +249,164 @@
          
     </main>
 
-    <!-- modals -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- register modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content rounded-4">
+                <div class="modal-header algin-items-start border-0 pb-2 ps-5 pe-4">
+                    <h2 class="modal-title text-center flex-grow-1" id="registerModalLabel">
+                        <img class="modal_logo" src="assets/img/origiland.svg" alt="origiland">
+                    </h2>
+                    <button type="button" class="btn-close rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body px-4 pb-4">
+                    <h3 class="fs_26 fw-semibold text-center">¡Nos alegra verte aquí! 👋</h3>
+                    <p class="fs_15 fw-normal text-center mb-4">Este puede ser el primer paso de un gran proyecto.</p>
+                    <div class="mb-3">
+                        <label class="mb-2 fw-normal">Ingresa tu correo o usuario</label>
+                        <input class="form-control" name="phone" type="tel" placeholder="Ingresa tu correo o usuario">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn_primary w-100 disabled">Enviar código de ingreso</button>
+                    </div>
+                    <p class="fs_15 fw-normal text-center">Al registrarte en Origiland, aceptas nuestros <a class="hover_underline" href="#">términos y condiciones</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- otp verification modal -->
+    <div class="modal fade" id="otpModal" tabindex="-1" aria-labelledby="otpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4">
+                <div class="modal-header algin-items-start border-0 pb-2 ps-5 pe-4">
+                    <h2 class="modal-title text-center flex-grow-1" id="otpModalLabel">
+                        <img class="modal_logo" src="assets/img/origiland.svg" alt="origiland">
+                    </h2>
+                    <button type="button" class="btn-close rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-body px-4 pb-4">
+                    <h3 class="fs_26 fw-semibold text-center">Ingresar código de ingreso</h3>
+                    <p class="fs_15 fw-normal text-center mb-4">Ingresa el código de 6 dígitos que hemos enviado vía sms a tu teléfono ********3455</p>
+                    <div class="otp_errorWrap">
+                        <div class="error_alert">
+                            El código ingresado es incorrecto. Por favor, verifica e intenta nuevamente.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="mb-2 fw-normal">Escribe el código de 6 dígitos</label>
+                        <div class="otp_inpWrapper">
+                            <input id="otp" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="otp_resendBtn mb-3 text-end">
+                        <a class="hover_underline" href="#">Reenviar código</a>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn_primary w-100 submit_btn disabled">Ingresar</button>
+                    </div>
+                    <p class="fs_15 fw-normal text-center">Al registrarte en Origiland, aceptas nuestros <a class="hover_underline" href="#">términos y condiciones</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- profile info modal -->
+    <div class="modal fade modal_lg" id="profileInfoModal" tabindex="-1" aria-labelledby="profileInfoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4">
+                <div class="modal-header algin-items-start border-0 pb-2 ps-5 pe-4">
+                    <h2 class="modal-title text-center flex-grow-1" id="profileInfoModalLabel">
+                        <img class="modal_logo" src="assets/img/origiland.svg" alt="origiland">
+                    </h2>
+                    <button type="button" class="btn-close rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pb-4">
+                    <h3 class="fs_26 fw-semibold text-center">Bienvenidx, ¡nos gustaría <br> llamarte por tu nombre!</h3>
+                    <p class="fs_15 fw-normal text-center mb-4">Completa la información básica de tu perfil</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div>
+                                <label class="mb-2 fw-normal">Nombre</label>
+                                <input class="form-control" name="firstname" type="text"placeholder="Ej. Juan">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <label class="mb-2 fw-normal">Apellido</label>
+                                <input class="form-control" name="lastname" type="text" placeholder="Ej. González">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <label class="mb-2 fw-normal">País</label>
+                                <select class="form-select" name="country">
+                                    <option disabled selected>Selección</option>
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <label class="mb-2 fw-normal">Ciudad</label>
+                                <select class="form-select" name="city">
+                                    <option disabled selected>Selección</option>
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div>
+                                <label class="mb-2 fw-normal">Correo electrónico</label>
+                                <input class="form-control" name="email" type="email" placeholder="Example@mail.com">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="check_inpLabel">
+                                <input class="form-check-input d-none" name="role" type="radio" value="1" checked>
+                                <div class="check_inpBox">
+                                    <h4 class="fs_20 fw-semibold">Soy propietario de un inmueble</h4>
+                                    <p class="fs_14">Te ayudaremos a crear el proyecto más rentable y atractivo del mercado</p>
+                                    <div>
+                                        <div class="form-check-input"></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="check_inpLabel">
+                                <input class="form-check-input d-none" name="role" type="radio" value="2">
+                                <div class="check_inpBox">
+                                    <h4 class="fs_20 fw-semibold">Soy Agente Inmobiliario</h4>
+                                    <p class="fs_14">Te ayudaremos a encontrar la mejor oportunidad en un terreno ideal para tu proyecto</p>
+                                    <div>
+                                        <div class="form-check-input"></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="check_inpLabel">
+                                <input class="form-check-input d-none" name="role" type="radio" value="3">
+                                <div class="check_inpBox">
+                                    <h4 class="fs_20 fw-semibold">Soy Profesional inmobiliario</h4>
+                                    <p class="fs_14">Te ayudaremos a encontrar la mejor oportunidad en un terreno ideal para tu proyecto</p>
+                                    <div>
+                                        <div class="form-check-input"></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <button type="button" class="btn btn_primary w-100 submit_btn">Ingresar</button>
+                    </div>
+                    <p class="fs_15 fw-normal text-center">Al registrarte en Origiland, aceptas nuestros <a class="hover_underline" href="#">términos y condiciones</a></p>
                 </div>
             </div>
         </div>
@@ -318,6 +462,7 @@
     <!-- .......... scripts .......... -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap-pincode-input.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
